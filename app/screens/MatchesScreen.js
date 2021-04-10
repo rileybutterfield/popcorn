@@ -17,11 +17,12 @@ function MatchesScreen({navigation}) {
 
 
 
-  const [matches, setMatches] = useState({})
+  const [matches, setMatches] = useState([])
   const loadMatches = async () => {
     const response = await matchesApi.getMatches(user.id)
     setMatches(response.data)
   }
+
 
   useEffect(()=> {
     setDidMount(true);
@@ -33,12 +34,16 @@ function MatchesScreen({navigation}) {
     return null;
   }
 
+  console.log("M", matches)
+
   return (
     <Screen style={styles.screen}>
       <AppText style={styles.title}>Our Movie Matches</AppText>
       <FlatList
         data={matches}
-        keyExtractor={(match) => match.movieId.toString()}
+        keyExtractor= {(movie) => {
+          return movie.id;
+        }}
         renderItem={({ item }) => (
           <Card
             title={item.title}

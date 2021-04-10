@@ -28,7 +28,7 @@
     "web": {
       "favicon": "./assets/p_logo.png"
     },
-    "description": "Can't ever agree on what to watch? Popcorn will let you and your movie-watching-partner match with a movie that you'll both love!",
+    "description": "Can't ever agree on what to watch? Popcorn will let you and your movie-watching-partner match with a movie that you'll both love!\n\nWant to try without creating an account and adding a friend? Log in as Cody with email: cody@email.com and password: 12345",
     "githubUrl": "https://github.com/rileybutterfield/popcorn"
   }
 }
