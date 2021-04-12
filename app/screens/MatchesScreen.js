@@ -44,6 +44,9 @@ function MatchesScreen({navigation}) {
         keyExtractor= {(movie) => {
           return movie.id;
         }}
+        key={(movie) => {
+          return movie.id;
+        }}
         renderItem={({ item }) => (
           <Card
             title={item.title}

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { NavigationContainer, useNavigation } from '@react-navigation/native';
-import {AppLoading} from "expo"
+import AppLoading from 'expo-app-loading'
 import AuthNavigator from "./app/navigation/AuthNavigator"
 import AppNavigator from "./app/navigation/AppNavigator"
 import navigationTheme from "./app/navigation/navigationTheme"
@@ -20,7 +20,7 @@ export default function App() {
   }
 
   if(!isReady)
-  return <AppLoading startAsync={restoreToken} onFinish={() => setIsReady(true)}  />
+  return <AppLoading startAsync={restoreToken} onFinish={() => setIsReady(true)}  onError={console.warn} />
 
   return (
     <AuthContext.Provider value={{user, setUser}}>
